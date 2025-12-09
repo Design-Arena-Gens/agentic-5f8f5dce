@@ -1,0 +1,68 @@
+.button {
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  padding: 0.95rem 1.8rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #432b18;
+  background: linear-gradient(120deg, #ffe0a6, #ffb864, #ff9348);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(255, 154, 65, 0.35);
+}
+
+.button:focus-visible {
+  outline: 3px solid rgba(255, 149, 71, 0.35);
+  outline-offset: 2px;
+}
+
+.pulse {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+  animation: pulse 2.6s infinite;
+  flex-shrink: 0;
+}
+
+.active {
+  color: #fff8ea;
+  background: linear-gradient(120deg, #ff9348, #ff7443, #ff9348);
+}
+
+.active .pulse {
+  animation: glow 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(255, 255, 255, 0);
+  }
+}
